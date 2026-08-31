@@ -2,7 +2,7 @@
 
 A basic network packet sniffer built in Python using **Scapy**, developed as part of the CodeAlpha Cybersecurity Internship.
 
-## 📌 Overview
+## Overview
 
 This tool captures live network traffic on a chosen interface and displays key details about each packet in real time:
 
@@ -15,7 +15,7 @@ This tool captures live network traffic on a chosen interface and displays key d
 
 Building this helped me understand how data actually moves through a network at the packet level — how IP, TCP, and UDP headers are structured, how the three-way handshake and payloads look on the wire, and why plaintext protocols (like HTTP) expose data to anyone sniffing the network — which is part of why HTTPS/TLS matters.
 
-## ⚙️ How It Works
+## How It Works
 
 1. Scapy's `sniff()` function captures raw packets from a network interface.
 2. Each packet is passed to a callback function (`process_packet`).
@@ -23,7 +23,7 @@ Building this helped me understand how data actually moves through a network at 
 4. If a `Raw` layer (payload) is present, it's decoded into a safe, printable preview.
 5. A formatted summary line is printed to the console (and optionally saved to a log file).
 
-## 🚀 Usage
+## Usage
 
 ### Install dependencies
 ```bash
@@ -71,7 +71,7 @@ sudo python3 sniffer.py -v
 sudo python3 sniffer.py -o capture_log.txt
 ```
 
-## 🖥 Sample Output
+## Sample Output
 
 ```
 ======================================================================
@@ -86,22 +86,22 @@ Verbose   : True
            Payload: GET / HTTP/1.1..Host: example.com..
 ```
 
-## 🧠 Key Concepts Demonstrated
+## Key Concepts Demonstrated
 
 - Packet capture and analysis at Layer 3/4 (IP, TCP, UDP, ICMP)
 - Use of Berkeley Packet Filter (BPF) syntax to isolate traffic
 - Practical understanding of the OSI/TCP-IP model
 - Why unencrypted protocols leak visible data over the network
 
-## ⚠️ Legal & Ethical Notice
+## Legal & Ethical Notice
 
 This tool is intended strictly for **educational purposes** on networks and devices you **own or have explicit permission to monitor**. Unauthorized packet capture on networks you don't control may violate computer misuse laws in your jurisdiction (e.g., the Computer Misuse Act, CFAA, etc.). Always practice responsible and ethical cybersecurity.
 
-## 🛠 Built With
+## Built With
 
 - Python 3
 - [Scapy](https://scapy.net/)
 
-## 📎 About This Project
+## About This Project
 
-Developed as **Task 1: Basic Network Sniffer** for the CodeAlpha Cybersecurity Internship.
+Developed as **Task 01: Basic Network Sniffer** for the CodeAlpha Cybersecurity Internship.
